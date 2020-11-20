@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+              xmlns:local="clr-namespace:BadgeSample"
+             x:Class="BadgeSample.MainPage"
+             xmlns:badgeview="clr-namespace:Syncfusion.XForms.BadgeView;assembly=Syncfusion.SfBadgeView.XForms" xmlns:local1="clr-namespace:BadgeSample.ViewModel">
+
+
+    <ContentPage.BindingContext>
+        <local1:ViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <local1:ZeroValueConverter x:Key="ZeroValueConverter"/>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+
+        <ListView ItemsSource="{Binding Items}"
+                  SelectionMode="Single" RowHeight="50"
+                  IsGroupingEnabled="True"
+                  CachingStrategy="RecycleElement"  
+                   >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Margin="30,0,0,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label HorizontalOptions="Start" VerticalOptions="Center" Text="{Binding Category}"/>
+                            <badgeview:SfBadgeView  BadgeText="{Binding Count, Converter={StaticResource ZeroValueConverter}}"  HorizontalOptions="End"  VerticalOptions="Center">
+                                <badgeview:SfBadgeView.BadgeSettings>
+                                    <badgeview:BadgeSetting BadgeType="None" BackgroundColor="{Binding Color}" TextColor="White" FontAttributes="Bold" CornerRadius="0" BadgePosition="TopRight" />
+                                </badgeview:SfBadgeView.BadgeSettings>
+                            </badgeview:SfBadgeView>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.GroupHeaderTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                    <Label Margin="10,10,0,0" FontSize="17" FontAttributes="Bold" Text="{Binding Heading}"/>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.GroupHeaderTemplate>
+        </ListView>
+    </ContentPage.Content>
+
+</ContentPage>
