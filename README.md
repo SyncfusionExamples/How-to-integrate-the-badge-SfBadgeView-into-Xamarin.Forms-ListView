@@ -1,6 +1,6 @@
 # How to integrate the badge SfBadgeView into Xamarin.Forms ListView
 
-This repository contains sample for how to integrate the [Syncfusion Xamarin.Forms Badge View](https://help.syncfusion.com/xamarin/badge-view/getting-started) control into [Xamarin.Forms ListView](https://learn.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/listview/) control.
+This repository contains sample to integrate the [Syncfusion Xamarin.Forms Badge View](https://help.syncfusion.com/xamarin/badge-view/getting-started) control into [Xamarin.Forms ListView](https://learn.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/listview/) control.
 
 Please refer the KB through this [link](https://www.syncfusion.com/kb/12120/how-to-integrate-the-badge-sfbadgeview-into-xamarin-forms-listview).
 
